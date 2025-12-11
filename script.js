@@ -1,10 +1,12 @@
 function replaceWord() {
-    const sentence = document.getElementById("sentence").value;
-    const oldWord = document.getElementById("old-word").value;
-    const newWord = document.getElementById("new-word").value;
-    const outputBox = document.getElementById("replace-output");
 
-    const result = sentence.replace(oldWord, newWord);
+  const sentence = document.getElementById("sentence").value;
+  const oldWord   = document.getElementById("old-word").value;
+  const newWord   = document.getElementById("new-word").value;
+  const outputBox = document.getElementById("replace-output");
 
-    outputBox.value = result;
+  const regex = new RegExp(oldWord, "g");
+  const result = sentence.replace(regex, newWord);
+
+  outputBox.value = result;
 }
